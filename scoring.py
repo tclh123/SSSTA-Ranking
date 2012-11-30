@@ -5,8 +5,14 @@ __author__ = 'tclh123'
 from parser import *
 
 def currentScore(spends, max_pts=1000.0, total=5*60.0):
-    """ Time unit is mins, e.g. currentScore(22.7, 500.0, 60.0) = 293.95 """
-    return max_pts*(0.3 + 0.7*total**2/(10*spends**2+total**2))
+    """
+    Time unit is mins, e.g. currentScore(22.7, 500.0, 60.0) = 293.95
+
+    from http://apps.topcoder.com/wiki/display/tc/Competing+in+a+Rated+Algorithm+Competition#CompetinginaRatedAlgorithmCompetition-12DeterminingScore
+
+    """
+#    return max_pts*(0.3 + 0.7*total**2/(10*spends**2+total**2))
+    return max_pts*(0.4 + 0.6*total**2/(10*spends**2+total**2))
 
 def scoring(html, prob_num, player_num, max_pts=1000.0):
     scores = {}

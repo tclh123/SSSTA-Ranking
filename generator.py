@@ -22,7 +22,7 @@ def getPlayer():
     f.close()
     return json.loads(str)
 
-def gen_round(html, prob_num, player_num, max_pts=1000.0):
+def gen_round(html, round_name, prob_num, player_num, max_pts=1000.0):
     the_round = []
 
     players = getPlayer()
@@ -38,7 +38,7 @@ def gen_round(html, prob_num, player_num, max_pts=1000.0):
         if name:
             the_round.append((name,p[1]))
 
-    filename = output_dir + 'round/backup_' + time.strftime('%Y%m%d%H%M%S') + str(random.randint(1, 99999)) + '.json'
+    filename = output_dir + 'round/backup_' + round_name + time.strftime('%m%d%H%M') + str(random.randint(1, 99999)) + '.json'
     f=codecs.open(filename,'w','utf-8')
     f.write(json.dumps(the_round))
     f.close()
@@ -56,8 +56,9 @@ def update_rank():    #TODO
         f.close()
         param = htmlfile.split('-')
         if len(param) != 4: continue
+        round_name = param[0]
         param = map(int, param[1:])
-        the_round = gen_round(html, param[0], param[1], param[2]*1.0)
+        the_round = gen_round(html, round_name, param[0], param[1], param[2]*1.0)
         print the_round
         for p in the_round:
             if p[0] not in rank:
