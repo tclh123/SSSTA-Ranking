@@ -3,13 +3,17 @@
         "name":"邹昌",
         "used_name":[]
     },
+    "frustratingman": {
+        "name":"who",
+        "used_name":["sniperhys"]
+    },
     "lkid": {
         "name":"吕灵玥",
         "used_name":[]
     },
     "hcw13379242420": {
         "name":"黄昌伟",
-        "used_name":[]
+        "used_name":["h549570564"]
     },
     "mizuki_tw": {
         "name":"唐威",
@@ -50,7 +54,7 @@
     },
     "sniperhys":{
         "name":"韩义深",
-        "used_name":["frustratingman"]
+        "used_name":[]
     },
     "Alex":{
         "name":"李志豪",
